@@ -58,7 +58,7 @@ app.get('/', async (req, res) => {
 
 app.post('/auth', (req, res) => {
   const { email, password } = req.body;
-  axios.post('https://jwtlogin.onrender.com/api/users/login', {
+  axios.post('https://ytjwtlogin.onrender.com/api/users/login', {
     email: email,
     password: password
   })
@@ -83,7 +83,7 @@ app.post('/auth', (req, res) => {
 
 app.get('/getchat', async (req, res) => {
   try {
-    axios.get(`https://chatreplay.onrender.com/?id=${req.query.videoId}`)
+    axios.get(`https://chatreplayapi.onrender.com/?id=${req.query.videoId}`)
       .then(response => {
         const data = response.data;
         return res.send(data);
